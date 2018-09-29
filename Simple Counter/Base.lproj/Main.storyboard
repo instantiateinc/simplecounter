@@ -1,21 +1,94 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" systemVersion="17A277" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13529" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13527"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--View Controller-->
+        <!--Simple Counter View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="SimpleCounterViewController" customModule="Simple_Counter" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="16" translatesAutoresizingMaskIntoConstraints="NO" id="lef-S7-6TA">
+                                <rect key="frame" x="8" y="611" width="359" height="48"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ax4-0W-unK">
+                                        <rect key="frame" x="0.0" y="0.0" width="171.5" height="48"/>
+                                        <color key="backgroundColor" red="1" green="0.79607843137254897" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="-">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressMinus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qxh-FF-6nf"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7hL-CY-cUQ">
+                                        <rect key="frame" x="187.5" y="0.0" width="171.5" height="48"/>
+                                        <color key="backgroundColor" red="1" green="0.79607843137254897" blue="0.23921568627450979" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="30"/>
+                                        <state key="normal" title="+">
+                                            <color key="titleColor" red="0.99999600649999998" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="didPressPlus:" destination="BYZ-38-t0r" eventType="touchUpInside" id="PNJ-yi-uvh"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Simple Counter" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lmq-nR-uda">
+                                <rect key="frame" x="38" y="36" width="298.5" height="48"/>
+                                <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="40"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iIl-jq-wba">
+                                <rect key="frame" x="8" y="283.5" width="359" height="100"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RSd-7M-35k">
+                                        <rect key="frame" x="168.5" y="29" width="23.5" height="42"/>
+                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="35"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                                <color key="backgroundColor" red="0.92143100499999997" green="0.92145264149999995" blue="0.92144101860000005" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="100" id="Q2S-gQ-iqK"/>
+                                    <constraint firstItem="RSd-7M-35k" firstAttribute="centerY" secondItem="iIl-jq-wba" secondAttribute="centerY" id="RR1-lt-xjF"/>
+                                    <constraint firstItem="RSd-7M-35k" firstAttribute="centerX" secondItem="iIl-jq-wba" secondAttribute="centerX" id="rmF-Oi-lEM"/>
+                                </constraints>
+                            </view>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="lef-S7-6TA" secondAttribute="bottom" constant="8" id="KNf-Dv-4Sa"/>
+                            <constraint firstItem="iIl-jq-wba" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="RZs-6z-5D7"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="iIl-jq-wba" secondAttribute="trailing" constant="8" id="VTR-13-dd7"/>
+                            <constraint firstItem="iIl-jq-wba" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="W43-ft-Tr1"/>
+                            <constraint firstItem="lef-S7-6TA" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="izU-b1-Arh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="lef-S7-6TA" secondAttribute="trailing" constant="8" id="qTv-X7-lTr"/>
+                            <constraint firstItem="Lmq-nR-uda" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="16" id="vti-Xl-Kgq"/>
+                            <constraint firstItem="Lmq-nR-uda" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="yde-Hd-N6S"/>
+                            <constraint firstItem="iIl-jq-wba" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="8" id="zAp-WX-cQu"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="counterLabel" destination="RSd-7M-35k" id="kXW-62-BVH"/>
+                        <outlet property="counterView" destination="iIl-jq-wba" id="Yc5-Ef-8kR"/>
+                        <outlet property="minusButton" destination="Ax4-0W-unK" id="Joi-4p-3DG"/>
+                        <outlet property="plusButton" destination="7hL-CY-cUQ" id="JA0-LQ-It2"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
